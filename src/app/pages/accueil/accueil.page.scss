@@ -1,0 +1,86 @@
+ion-header{
+
+background: #08a391;
+}
+ion-title{
+color: #08a391;
+}
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10%;
+  
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+.blockitem{
+
+  float :left;
+    width:100%;
+  ion-label{
+    float:left;
+    padding-left:1.5em;
+    width:70%;
+  }
+  ion-avatar{
+    float:left;
+    border-radius:50%;
+
+  }
+  ion-badge{
+    float:right;
+	margin-top:10px;
+	background: #08a391;
+  }
+
+}
+ion-list{
+margin-top:20px;
+}
+.select-radio{
+width:84%;
+margin:auto;
+}
+ion-segment-button::part(indicator-background) {
+  background: #08a391;
+}
+
+/* Material Design styles */
+ion-segment-button.md::part(native) {
+  color: #000;
+}
+
+.segment-button-checked.md::part(native) {
+  color: #08a391;
+}
+
+ion-segment-button.md::part(indicator-background) {
+  height: 4px;
+}
+
+/* iOS styles */
+ion-segment-button.ios::part(native) {
+  color: #08a391;
+}
+
+.segment-button-checked.ios::part(native) {
+  color: #fff;
+}
+
+ion-segment-button.ios::part(indicator-background) {
+  border-radius: 20px;
+}

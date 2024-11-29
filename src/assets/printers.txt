@@ -1,0 +1,31 @@
+[ {
+  id:'12',
+  urlimage:'../assets/images/powder-printer.png',
+  nom:'Powder printer',
+  miseservice:'14/10/2024',
+},
+{
+  id:'17',
+  urlimage:'../assets/images/wire-printer.png',
+  nom:'Wire printer',
+  miseservice:'10/10/2024',
+},
+{
+  id:'24',
+  urlimage:'../assets/images/wire-printer.png',
+  nom:'Wire printer',
+  miseservice:'11/10/2024',
+},
+{
+  id:'35',
+  urlimage:'../assets/images/resin-printer.png',
+  nom:'Resin printer',
+  miseservice:'05/02/2024',
+},
+{
+  id:'37',
+  urlimage:'../assets/images/wire-printer.png',
+  nom:'Wirer printer',
+  miseservice:'20/07/2024',
+},
+]	

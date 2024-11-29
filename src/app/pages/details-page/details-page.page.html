@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+
+  <ion-toolbar>
+  <ion-icon name="arrow-back-outline" color="white"  (click)="retourne()" ></ion-icon>
+    <ion-title>Printer Infos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <div *ngIf="printer">
+  <ion-card>
+  <ion-card-header>
+    <ion-card-title>{{printer.nom}} #{{printer.id}}</ion-card-title>
+    <ion-card-subtitle>{{printer.miseservice}}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+   <!--h1>Step 1 : Choose the category</h1-->
+   <ion-list>
+   <ion-item>
+  <div class="input-box">
+
+              <ion-select interface="popover"  label="Type" placeholder="{{getType(printer.nom)}}"  (ionChange)="printerSelectionChanged($event)"  *ngIf="lstTypes && lstTypes.length" >
+
+              <ion-select-option [value]="typeprinte"  *ngFor= "let typeprinte of (lstTypes)" >
+              {{typeprinte}}
+              </ion-select-option>
+            </ion-select>
+    </div>
+    </ion-item>
+	<ion-item>
+	
+	<ion-input  label ="Id" fill="solid" type=text placeholder="{{printer.id}}" ></ion-input>
+	</ion-item>
+	<ion-item>
+	<ion-input label="Start date"  id="strtdate" fill="outline" placeholder="{{dateExample}}"  >
+	<ion-button fill="clear" slot="end" aria-label="Show/hide" (click)="openCalendar()" >
+	
+	
+	<ion-icon slot="icon-only" name="calendar-number-outline" aria-hidden="true" ></ion-icon>
+	 </ion-button>
+	  <ion-datetime-button datetime="datetime" id="fake-click"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true" [isOpen]="showCalendar" (didDismiss)="annuleCalendar()">
+          <ng-template>
+            <ion-datetime
+              id="datetime"
+			  displayFormat="dd/MM/YY"
+			  [(ngModel)]="dateExample"
+			  value="{{arrangeDate(printer.miseservice)}}"
+              presentation="day/month/year"
+              [showDefaultButtons]="true"
+              doneText="Confirmer"
+              cancelText="Annuler"
+            ></ion-datetime>
+          </ng-template>
+        </ion-modal>
+		
+        
+     </ion-input>
+	</ion-item>
+	</ion-list>
+   <ion-button (click)="markIt()">Schedule maintenance</ion-button>
+  </ion-card-content>
+</ion-card></div>
+</ion-content>

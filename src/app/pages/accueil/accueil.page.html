@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  
+ 
+  <ion-toolbar><ion-icon name="home" color="white" ></ion-icon>
+    <ion-title>
+      3D-Printers
+    </ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+  <ion-segment value="id" class="select-radio" (ionChange)="sortListContenu($event)" mode="ios">
+  <ion-segment-button value="id">
+    <ion-label>Id</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="type">
+    <ion-label>Type</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="date">
+    <ion-label>Date</ion-label>
+  </ion-segment-button>
+</ion-segment>
+     <ion-list *ngIf="!estVide">
+      <!-- /-->
+	<ion-item *ngFor="let c of lstPrinters" (click)="itemSelection($event,c)" class="item-elem">
+          <div class="blockitem">
+          <ion-avatar slot="start">
+            
+            <img src="{{c.urlimage}}" alt="Printer {{c.nom}}" />
+          </ion-avatar>
+          <ion-label>
+              <h3>{{c.nom}} #{{c.id}}</h3>
+              <h5>{{c.miseservice}}</h5>
+            </ion-label>
+              <ion-badge slot="end" (click)="voirDetails($event,c)">
+                <ion-icon name="eye"></ion-icon>
+              </ion-badge>
+            </div>
+            </ion-item>
+            <!-- / -->
+      </ion-list>
+  </div>
+  
+</ion-content>

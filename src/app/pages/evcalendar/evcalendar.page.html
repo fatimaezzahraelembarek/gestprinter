@@ -1,0 +1,55 @@
+﻿<ion-header [translucent]="true">
+
+     
+  <ion-toolbar>
+   <ion-icon name="arrow-back-outline" color="white"  (click)="retourne()"></ion-icon>
+    <ion-title>Liste des événements</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+   <ion-accordion-group>
+  <ion-accordion value="{{i}}" *ngFor="let rdv of lstRdv ; let i = index">
+    <ion-item slot="header" color="light">
+      <ion-label>{{rdv.titre}}</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+	<ion-list>
+	<ion-item>
+	Date début:{{rdv.dateDebut}} à {{rdv.heureDebut}}
+	</ion-item>
+	<ion-item>
+	Date fin:{{rdv.dateFin}} à {{rdv.heureFin}}
+	</ion-item>
+	<ion-item>
+	Sujet:{{rdv.observe}}
+	</ion-item>
+	</ion-list>
+	</div>
+  </ion-accordion>
+ 
+</ion-accordion-group>
+
+
+<!--ion-accordion-group>
+  <ion-accordion value="first">
+    <ion-item slot="header" color="light">
+      <ion-label>First Accordion</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">First Content</div>
+  </ion-accordion>
+  <ion-accordion value="first">
+    <ion-item slot="header" color="light">
+      <ion-label>Second Accordion</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">Second Content</div>
+  </ion-accordion>
+  <ion-accordion value="third">
+    <ion-item slot="header" color="light">
+      <ion-label>Third Accordion</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">Third Content</div>
+  </ion-accordion>
+</ion-accordion-group-->
+</ion-content>
